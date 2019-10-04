@@ -7,7 +7,7 @@ jobs:
       - checkout
       - restore_cache:
         key: dependency-cache-{{ checksum 
-        "package.json"}}
+          "package.json"}}
       - run:
           name: install-npm-wee
           command: npm install
