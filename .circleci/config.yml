@@ -16,6 +16,6 @@ jobs:
             ls -al
             echo '^^^That should look familiar^^^'
       - run:
-        name: test
-        command: |
-            npm test            
+          name: test
+          command: |
+            npm test
