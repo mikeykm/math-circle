@@ -17,4 +17,5 @@ jobs:
             echo '^^^That should look familiar^^^'
       - run:
         name: test
-        command: npm test            
+        command: |
+            npm test            
