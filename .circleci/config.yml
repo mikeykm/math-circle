@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   build:
     working_directory: ~/public
@@ -6,20 +6,10 @@ jobs:
       - image: circleci/node:10.15.3
     steps:
       - checkout
-      - restore_cache:
-        key: dependency-cache-{{ checksum 
-          "package.json"}}
-      - run:
-        name: install-npm-wee
-        command: npm install
-      - save_cache:
-        key: dependency-cache-{{ checksum 
-          "package.json"}}
-        paths:
-          - ./node_modules
       - run:
         name: test
-        command: npm test
+        command: |
+          npm test
       - store_artifacts:
         path: test-results.xml
         prefix: tests
