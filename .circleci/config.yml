@@ -1,20 +1,17 @@
 version: 2.1
 jobs:
   build:
-    working_directory: ~/public
     docker:
-      - image: circleci/node:10.15.3
+      - image: alpine:3.7
     steps:
       - checkout
       - run:
-        name: test
-        command: |
-          npm test
-      - store_artifacts:
-        path: test-results.xml
-        prefix: tests
-      - store_artifacts:
-        path: coverage
-        prefix: coverage
-      - store_test_results:
-        path: test-results.xml
+          name: The First Step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
+      - run:
+          name: Code Has Arrived
+          command: |
+            ls -al
+            echo '^^^That should look familiar^^^'
